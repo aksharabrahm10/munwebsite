@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFSSMUN — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.hero{max-width:1180px; margin:0 auto; padding:76px 28px 56px; display:flex; flex-direction:column; align-items:center; text-align:center;}
+.hero img.crest{width:76px; height:76px; border-radius:50%; margin-bottom:20px;}
+.hero .date{font-size:14px; font-weight:600; color:var(--silver-dark); letter-spacing:0.05em; margin-bottom:16px; text-transform:uppercase;}
+.hero h1{font-size:clamp(38px,6.4vw,68px); font-weight:600; letter-spacing:-0.02em; line-height:1.06;}
+.hero p.sub{font-size:16px; color:var(--text-soft); margin-top:16px; max-width:480px;}
+.hero .actions{display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; justify-content:center;}
+.hero-picture{max-width:1180px; margin:0 auto 0; padding:0 28px;}
+.hero-picture .ph{height:380px; border-radius:14px;}
+.letter-section{background:var(--ink); color:var(--white);}
+.letter-grid{display:grid; grid-template-columns:260px 1fr; gap:52px; align-items:start;}
+.letter-grid .ph{aspect-ratio:4/5;}
+.letter-grid .tag{color:var(--silver-light);}
+.letter-grid h2{color:var(--white);}
+.letter-grid p{color:#C7CCD8; font-size:15px; line-height:1.75; margin-bottom:14px;}
+.sig-block{margin-top:22px;}
+.sig-block .ph{width:170px; height:64px;}
+.sig-name{margin-top:10px; font-family:var(--font-display); font-size:20px; font-style:italic; color:var(--white);}
+.sig-role{font-size:12.5px; color:#9AA3B4; margin-top:2px;}
+@media (max-width:760px){.letter-grid{grid-template-columns:1fr;} .letter-grid .ph{max-width:200px;}}
+.link-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+@media (max-width:900px){.link-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.link-grid{grid-template-columns:1fr;}}
+</style>
+<script>
+function phFallback(img,label){
+  label = label || 'Picture';
+  var div = document.createElement('div');
+  div.className = img.className + ' ph';
+  div.innerHTML = label + '<small>' + img.getAttribute('src') + '</small>';
+  img.replaceWith(div);
+}
+</script></head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-white.png" alt="TFSSMUN logo" onerror="phFallback(this)">
+      TFSSMUN
+    </a>
+    <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="secretariat.html">Secretariat</a>
+      <a href="committees.html">Committees</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="position-papers.html">Position Papers</a>
+      <a href="awards.html">Awards</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="registration.html" class="nav-cta">Register</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="crest glow-ring" src="assets/crest.png" alt="TFSSMUN crest" onerror="phFallback(this)">
+  <div class="date">TFSSMUN III &middot; One-Day Conference</div>
+  <h1>Turner Fenton<br>Model United Nations</h1>
+  <p class="sub">Turner Fenton Secondary School, Brampton, ON</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="registration.html">Register</a>
+    <a class="btn btn-outline" href="committees.html">See Committees</a>
+  </div>
+</section>
+
+<div class="hero-picture">
+  <div class="ph">Picture or video<small>assets/hero-banner.jpg</small></div>
+</div>
+
+<section class="section-tight" style="text-align:center;">
+  <div class="section-head" style="margin:0 auto 20px;">
+    <div class="tag">Countdown</div>
+    <h2 style="font-size:22px;">Time until the conference</h2>
+  </div>
+  <div class="countdown" id="countdown">
+    <div class="cd-unit"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Minutes</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seconds</div></div>
+  </div>
+  <p class="note" style="display:inline-block;">Example date shown, exact date to be confirmed.</p>
+</section>
+
+<section class="section letter-section">
+  <div class="letter-grid">
+    <div>
+      <img class="ph" src="assets/sg-headshot.jpg" alt="Secretary-General" onerror="phFallback(this)">
+    </div>
+    <div>
+      <div class="tag">A Note From The Secretariat</div>
+      <h2>Letter from the Secretary-General</h2>
+      <p style="margin-top:18px;">Dear Delegates,</p>
+      <p>My name is Shaan Shah, and it is my distinct honour to serve as the Secretary-General of the third annual Turner Fenton Secondary School Model United Nations Conference (TFSSMUN). On behalf of the entire Secretariat, it is my pleasure to welcome you to this year's conference.</p>
+      <p>Whether you are an experienced delegate or attending your very first Model UN conference, we are excited to provide an engaging and rewarding experience that will challenge, inspire, and help you grow. TFSSMUN has always been committed to fostering an environment where delegates can develop critical thinking, diplomacy, public speaking, negotiation, and leadership skills while engaging with some of the world's most pressing issues.</p>
+      <p>This year's conference features a diverse selection of committees, ranging from traditional General Assemblies to dynamic Crisis and Joint Crisis simulations. Every committee has been thoughtfully designed by our Directors, Chairs, and Dais teams to provide delegates with challenging debate, creative problem-solving opportunities, and an unforgettable committee experience. We encourage you to embrace your role, think critically, collaborate with fellow delegates, and approach every debate with confidence, professionalism, and an open mind.</p>
+      <p>The success of TFSSMUN would not be possible without the unwavering dedication of our Secretariat, staff members, volunteers, faculty advisors, and the countless individuals who have worked tirelessly behind the scenes to make this conference a reality. Their commitment and passion have been instrumental in bringing this event to life, and for that, we are sincerely grateful.</p>
+      <p>However, the true spirit of TFSSMUN lies with you. Your ideas, determination, and enthusiasm are what transform committee rooms into spaces of meaningful discussion and impactful diplomacy. Every speech you deliver, every resolution you draft, and every challenge you overcome contributes to the unique experience that makes Model United Nations so rewarding.</p>
+      <p>Model United Nations has become an integral part of our high school journey, providing us with invaluable friendships, experiences, and opportunities for personal growth. It is our hope that TFSSMUN leaves the same lasting impact on each of you and inspires you to continue pursuing diplomacy, leadership, and global engagement long after this conference concludes.</p>
+      <p>Thank you for choosing to be a part of TFSSMUN III. The Secretariat and I look forward to welcoming you and witnessing the passion, collaboration, and excellence that each of you will bring to the committee. We wish you the very best of luck and hope you have an unforgettable conference.</p>
+      <p>Warm Regards,</p>
+      <div class="sig-block">
+        <img class="ph" src="assets/sg-signature.png" alt="Secretary-General signature" onerror="phFallback(this,'Signature')">
+        <div class="sig-name">Shaan Shah</div>
+        <div class="sig-role">Secretary-General, TFSSMUN III</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div class="tag">About</div>
+    <h2>What TFSSMUN is</h2>
+    <p>TFSSMUN is a Model United Nations conference hosted in the Peel Region by high school students from Turner Fenton Secondary School. This year marks our third annual conference, bringing together delegates from across the region for diplomacy, debate, and collaboration. Our goal is to create an engaging environment where students can explore global issues, represent diverse perspectives, and develop their skills in public speaking, negotiation, and leadership.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-head">
+    <div class="tag">Find Your Way</div>
+    <h2>Everything you need</h2>
+  </div>
+  <div class="link-grid">
+    <a class="link-card" href="secretariat.html"><h3>Secretariat</h3><p>Meet the team running the conference.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="committees.html"><h3>Committees</h3><p>See this year's committees and topics.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="schedule.html"><h3>Schedule</h3><p>The full conference day, hour by hour.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="position-papers.html"><h3>Position Papers</h3><p>How to write and submit yours.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="registration.html"><h3>Registration</h3><p>Fees, deadlines, and sign up.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="awards.html"><h3>Awards</h3><p>How delegates get recognized.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="faq.html"><h3>FAQ</h3><p>Answers to common questions.</p><span class="arrow">Go</span></a>
+    <a class="link-card" href="contact.html"><h3>Contact Us</h3><p>Questions? Reach the right person.</p><span class="arrow">Go</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <img src="assets/logo-white.png" alt="TFSSMUN logo" onerror="phFallback(this)" style="width:38px; height:38px; border-radius:50%;">
+      <h5 style="margin-top:12px;">TFSSMUN</h5>
+      <p>Turner Fenton Secondary School Model United Nations.</p>
+    </div>
+    <div>
+      <h5>Conference</h5>
+      <a href="secretariat.html">Secretariat</a>
+      <a href="committees.html">Committees</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="awards.html">Awards</a>
+    </div>
+    <div>
+      <h5>Delegates</h5>
+      <a href="position-papers.html">Position Papers</a>
+      <a href="registration.html">Registration</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div>
+      <h5>Connect</h5>
+      <a href="contact.html">Contact Us</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>TFSSMUN III, Turner Fenton Secondary School</span>
+  </div>
+</footer>
+
+<script>
+const target = new Date('2027-03-14T09:00:00');
+function tick(){
+  const now = new Date();
+  let diff = target - now;
+  if(diff < 0) diff = 0;
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff/(1000*60*60))%24);
+  const m = Math.floor((diff/(1000*60))%60);
+  const s = Math.floor((diff/1000)%60);
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+tick();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
